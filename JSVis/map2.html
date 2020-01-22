@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beamer 2</title>
+    <link rel="stylesheet" href="../lib/ol3/v3.20.0/ol.css">
+    <style type = "text/css" media = "all">
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .map {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .mapRe {
+            height: 1920px;
+            width: 1080px;
+            transform: matrix3d(
+                    0.7, 0.26, 0, 0.00027,
+                    /* 0, 0.93, 0, 0, */
+                    0, 0.94, 0, 0,
+                    0, 0, 1, 0,
+                    /* 513, -2, 0, 1 */
+                    506, -14, 0, 1
+            );
+            transform-origin: 0px 0px 0px;
+        }
+
+        .mapLi {
+            height: 1920px;
+            width: 1080px;
+            transform: matrix3d(
+                    0.35, -0.2, 0, -0.00021,
+                    0, 0.74, 0, 0,
+                    0, 0, 1, 0,
+                    /* 22, 250, 0, 1 */
+                    27, 250, 0, 1
+            );
+            transform-origin: 0px 0px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="map" class="map"></div>
+
+    <script src="../lib/jquery/v3.2.1/jquery.min.js"></script>
+
+    <script>
+        // Query string
+        var query = window.location.search;
+        query = query.replace('?', '');
+
+        if ( query == 'left' ) {
+            document.getElementById('map').classList.add('mapLi');
+        } else if ( query == 'right' ) {
+            document.getElementById('map').classList.add('mapRe');
+        }else if ( query == 'bento' ) {
+            document.getElementById('map').classList.add('mapBento');
+        }
+    </script>
+
+    <script src="../lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../lib/ol3/v3.20.0/ol.js"></script>
+    <script src="../lib/autobahn.min.js"></script>
+    <script src="../lib/proj4.js"></script>
+
+    <!-- <script src="vectorlabels.js"></script> -->
+
+    <script data-main="mapWsocket" src="../lib/require.js"></script>
+    <script src="map1gis.js"></script>
+
+</body>
+</html>

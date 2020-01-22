@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico">
+    <title>SmartSquare / Legend on detected objects</title>
+
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        h1 {
+            color: black;
+            font-size:28pt;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        header::after {
+            background: none;
+            background: -moz-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -webkit-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -o-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -ms-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: linear-gradient(to right, #95D02C 0%, #95D02C 100%);
+
+            content: '';
+            height: 10px;
+            position: absolute;
+            left: 0; right: 0; top: 210px;
+            width: 100%;
+        }
+
+        footer {
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        article {
+            padding: 1em;
+            overflow: hidden;
+        }
+
+        #clock {
+            color: lightgray;
+            font-family: Arial;
+            font-size: 100px;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="height:1060px;">
+
+    <header style="height:185px;">
+        <img src="../data/img/smsq_logo.png" style="float:left;height:150px;padding-left:25px;padding-top:10px;">
+        <img src="../data/img/bmbf_farbe.bmp" style="float:right;height:175px;">
+    </header>
+
+    <!-- <h1> Überschrift </h1> -->
+
+    <article style="position:relative;height:355px;width:1260px;left:300px;"> <!-- values for 1 row and 3 columns-->
+        <br><br><br><br><br><br><br> <!-- <br><br><br><br> -->
+        <div class="a1"><p style="float:left;padding:10px;background-color:ghostwhite;border:5px solid lightgray;color:ghostwhite;width:30px;">gwht</p></div>
+        <div class="a2"><p style="float:left;font-family:Arial;font-size:24px;width:250px;">&nbsp;Pedestrians</p></div>
+        <div class="b1"><p style="float:left;padding:10px;background-color:lightgray;border:5px solid black;color:lightgray;width:30px;">lgry</p></div>
+        <div class="b2"><p style="float:left;font-family:Arial;font-size:24px;width:250px;">&nbsp;Cars</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:pink;border:5px solid red;color:pink;width:30px;">pnk</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:250px;">&nbsp;"Speeder" (Cars)</p></div>
+        <div class="d1"><p style="float:left;padding:10px;background-color:lightyellow;border:5px solid yellow;color:lightyellow;width:30px;">lyll</p></div>
+        <div class="d2"><p style="float:left;font-family:Arial;font-size:24px;width:250px;">&nbsp;Virtual Agents</p></div>
+
+        <br><br><br><br><br><br><br> <!-- <br><br><br><br> -->
+
+        <div id="clock"></div>
+    </article>
+
+    <footer>
+        <img src="../data/img/smsq.png" width="100%" style="bottom:0;clear:none">
+    </footer>
+
+</div>
+
+<script src="../../lib/autobahn.min.js"></script>
+<script src="../../lib/jquery/v3.2.1/jquery.min.js"></script>
+
+<script data-main="../dashb_wsocket1" src="../../lib/require.js"></script>
+
+</body>
+</html>

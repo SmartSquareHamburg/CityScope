@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>SmartSquare / Building function</title>
+
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        footer {
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        article {
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="height:1060px;">
+
+    <header style="height:175px;">
+        <img src="../data/img/smsq_logo.png" style="float:left;height:150px;padding-left:10px;padding-top:10px;">
+        <img src="../data/img/bmbf_farbe.bmp" style="float:right;height:175px;">
+    </header>
+
+    <article style="position:relative;height:365px;width:1260px;left:300px;">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <h1 style="font-family:Arial;">Geb&auml;udefunktion (ALKIS)</h1>
+        <div class="a1"><p style="float:left;padding:10px;background-color:#999999;color:#999999;width:50px;">1</p></div>
+        <div class="a2"><p style="float:left;font-family:Arial;font-size:24px;width:350px;">&nbsp;Wohnen (allg.)</p></div>
+        <div class="b1"><p style="float:left;padding:10px;background-color:#CCCCCC;color:#CCCCCC;width:50px;">2</p></div>
+        <div class="b2"><p style="float:left;font-family:Arial;font-size:24px;width:350px;">&nbsp;Wirtschaft und Gewerbe (allg.)</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:#F6725E;color:#F6725E;width:50px;">3</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:350px;">&nbsp;Gemeinwesen (allg.)</p></div>
+    </article>
+
+    <footer>
+        <img src="../data/img/smsq.png" width="100%" style="bottom:0;clear:none">
+    </footer>
+
+</div>
+
+<script src="../../lib/autobahn.min.js"></script>
+<script src="../../lib/jquery/v3.2.1/jquery.min.js"></script>
+
+<script data-main="../dashb_wsocket1" src="../../lib/require.js"></script>
+
+</body>
+</html>

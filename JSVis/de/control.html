@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico">
+    <title>Bento / Control</title>
+
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        h1 {
+            color: black;
+            font-size:28pt;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        header::after {
+            background: none;
+            background: -moz-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -webkit-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -o-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: -ms-linear-gradient(left, #95D02C 0%, #95D02C 100%);
+            background: linear-gradient(to right, #95D02C 0%, #95D02C 100%);
+
+            content: '';
+            height: 10px;
+            position: absolute;
+            left: 0; right: 0; top: 210px;
+            width: 100%;
+        }
+
+        footer {
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        article {
+            padding: 1em;
+            overflow: hidden;
+        }
+
+        button{
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+
+            height: 100px;
+            width: 249px;
+
+            margin-top: 1px;
+        }
+
+        select{
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+
+            height: 100px;
+            width: 249px;
+        }
+
+        input{
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+
+            text-align: center;
+
+            height: 94px;
+            width: 116.5px;
+
+            padding: 2px;
+            border-width: 1px;
+        }
+
+        html {
+            overflow:hidden;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container" style="height:1060px;">
+
+        <header style="height:185px;">
+            <img src="../data/img/smsq_logo.png" style="float:left;height:150px;padding-left:25px;padding-top:10px;">
+            <img src="../data/img/bmbf_farbe.bmp" style="float:right;height:175px;">
+        </header>
+
+        <h1> BentoScope: Control </h1>
+
+        <!-- <article style="position:relative;height:355px;width:1260px;left:300px;"> -->
+        <article id="article" style="position:relative;height:660px;width:1770px;left:50px;">
+
+            <!-- row "0" -->
+
+            <button type="button" id="initTv1Ctrl" onclick="initTv1Func()" value=false>Dashboard 1</button>
+            <button type="button" id="initTv2Ctrl" onclick="initTv2Func()" value=false>Dashboard 2</button><br>
+
+            <!-- row 1 -->
+
+            <button type="button" id="viewAerialInitCtrl" onclick="viewAerialInitFunc()" value=true style="background-color:skyblue;">Aerial View</button>
+            <button type="button" id="viewModelInitCtrl" onclick="viewModelInitFunc()" value=false>Model View</button>
+
+            <select id="chooseAOICtrl" onchange="chooseAOIFunc()">
+                <option value="nix">Choose AOI</option>
+                <option value="garnix">==========</option>
+
+                <option value="HH-Altstadt">HH-Altstadt (Stadtt.)</option>
+                <option value="SmartSquare">SmartSquare</option>
+                <option value="SmartSquare_Z">SmartSquare_Z</option>
+            </select>
+
+            <button type="button" id="spotOnSmsqCtrl" onclick="spotOnSmsqFunc()" value=true style="background-color:skyblue;">Highlight SmSq</button>
+            <button type="button" id="axBuildingsCtrl" onclick="axBuildingsFunc()" value=false>AX_Buildings</button>
+            <button type="button" id="hhInnerCityConceptCtrl" onclick="hhInnerCityConceptFunc()" value=false>Inner City Concept</button>
+
+            <select id="annoCtrl" onchange="annoFunc()">
+                <option value="nix">Choose Historical View</option>
+                <option value="garnix">==================</option>
+
+                <option value="1150">Anno 1150</option>
+                <option value="1200">Anno 1200</option>
+                <option value="1250">Anno 1250</option>
+                <option value="1550">Anno 1550</option>
+                <option value="1650">Anno 1650</option>
+            </select>
+
+            <!-- row 2 -->
+
+            <button type="button" id="infrastrCtrl" onclick="infrastrFunc()" value=false>Infrastructure</button>
+            <button type="button" id="grInfrastrCtrl" onclick="grInfrastrFunc()" value=false>Green Infrastr.</button>
+
+            <!-- 123px, than 122px -->
+            <button type="button" id="lgndHKLegoCtrl" onclick="lgndHKLegoFunc()" style="width:123px;" value=false>HK-LEGO</button>
+            <button type="button" id="HKResetCtrl" onclick="HKResetFunc()" style="font-style:italic;font-weight:initial;width:122px;" value=false>Reset</button>
+
+            <!-- 123px, than 122px -->
+            <button type="button" id="qualProfilesCtrl" onclick="qualProfilesFunc()" style="width:123px;" value=false>Profiles</button>
+            <button type="button" id="profilesResetCtrl" onclick="profilesResetFunc()" style="font-style:italic;font-weight:initial;width:122px;" value=false>Reset</button>
+
+            <button type="button" id="qualNetworkCtrl" onclick="qualNetworkFunc()" value=false>Network Qual.</button>
+            <button type="button" id="hhFIDCtrl" onclick="hhFIDFunc()" value=false>Impact on Freq. (ext.)</button>
+
+            <!-- 123px, than 122px -->
+            <button type="button" id="noiseDayCtrl" onclick="noiseDayFunc()" style="width:123px;" value=false>Noise (D)</button>
+            <button type="button" id="noiseNightCtrl" onclick="noiseNightFunc()" style="width:122px;" value=false>Noise (N)</button>
+
+            <!-- row 3 -->
+
+            <button type="button" id="camPositionCtrl" onclick="camPositionFunc()" value=false>Camera Points</button>
+            <button type="button" id="camViewsCtrl" onclick="camViewsFunc()" value=false style="color:lightgrey">Camera Views</button>
+            <button type="button" id="trxRawCtrl" onclick="trxRawFunc()" value=false>Trx Raw</button>
+            <button type="button" id="trxHeatCtrl" onclick="trxHeatFunc()" value=false>Trx Heat</button>
+            <button type="button" id="trxPCACtrl" onclick="trxPCAFunc()" value=false>Trx PCA</button>
+            <button type="button" id="installCtrl" onclick="installFunc()" value=false>Cultural Inst.</button>
+            <button type="button" id="beaconsCtrl" onclick="beaconsFunc()" value=false>iBeacons</button>
+
+            <!-- row 4 -->
+
+            <button type="button" id="trxCtrl" onclick="trxFunc()" value=false>Pedestrians</button>
+
+            <!-- <button type="button" id="trxLgndCtrl" onclick="trxLgndFunc()" style="width:123px;" value=false>Trx Anim.</button> -->
+            <!-- <button type="button" id="trxAnimCtrl" onclick="trxAnimFunc()" style="width:122px;" value=false>Run!</button> -->
+
+            <!-- to be used from above mentioned button: trxAnimCtrl -->
+            <!-- <select id="trxCamCtrl" style="width:186px;">
+                <option value="nix">Camera</option>
+                <option value="garnix">======</option>
+
+                <option value="backhus">Dat Backhus</option>
+                <option value="designOffices">DesignOffices</option>
+                <option value="kirchvorplatz">Bei St. Petri</option>
+                <option value="kreuzungDomplatz">Gr&uuml;nfl&auml;che</option>
+
+            </select> -->
+
+            <!-- to be used from above mentioned button: trxAnimCtrl -->
+            <!-- <select id="trxTimeCtrl" style="width:185px;">
+                <option value="nix">Time</option>
+                <option value="garnix">======</option>
+
+                <option value="20180314_0800_1000">A priori - morgens, M&auml;rz Werktag</option>
+                <option value="20180314_1130_1330">A priori - mittags, M&auml;rz Werktag</option> -->
+                <!-- <option value="20180314_1330_1530">A priori - nachmittag, M&auml;rz Werktag</option> -->
+                <!-- <option value="20180314_1530_1730">A priori - abends, M&auml;rz Werktag</option>
+
+                <option value="20180317_0800_1000">A priori - morgens, M&auml;rz Samstag</option>
+                <option value="20180317_1130_1330">A priori - mittags, M&auml;rz Samstag</option>
+
+                <option value="20180318_0800_1000">A priori - morgens, M&auml;rz Sonntag</option>
+                <option value="20180318_1130_1330">A priori - mittags, M&auml;rz Sonntag</option>
+
+            </select> -->
+
+            <!-- to be used from above mentioned button: trxAnimCtrl -->
+            <!-- <input id="trxMultiplyCtrl" type="text" value="10"> -->
+
+            <button type="button" id="abmAnimCtrl" onclick="abmAnimFunc()" value=false>ABM Animation</button>
+
+            <!-- to be used from above mentioned button: abmAnimCtrl -->
+            <input id="abmArgs0" type="text" value="22">
+            <!-- to be used from above mentioned button: abmAnimCtrl -->
+            <input id="abmArgs1" type="text" value="0">
+
+            <button type="button" id="hvvRoutesCtrl" onclick="hvvRoutesFunc()" value=false>HVV</button>
+            <button type="button" id="hvvAnimCtrl" onclick="hvvAnimFunc()" style="width:123px;" value=false>GTFS</button>
+            <button type="button" id="hvvClearIntervalCtrl" onclick="hvvClearIntervalFunc()" style="width:123px;" value=false>Out</button>
+
+            <!-- row 5 (tbc) -->
+
+        <br><button type="button" id="csl_fpCtrl" onclick="csl_fpFunc()" value=false>FindingPlaces</button>
+
+        </article>
+
+        <!-- <footer> -->
+        <!-- <img src="data/img/smsq.png" width="100%" style="bottom:0;clear:none"> -->
+        <!-- </footer> -->
+
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../lib/jquery/jquery-2.1.3.min.js"></script>
+
+    <script src="../../lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../../lib/autobahn.min.js"></script>
+    <script src="../../lib/proj4.js"></script>
+
+    <script data-main="controlWsocket" src="../../lib/require.js"></script>
+    <!-- <script src="../ini.js"></script> -->
+    <!-- <script src="controlWsocket.js"></script> -->
+
+</body>
+</html>

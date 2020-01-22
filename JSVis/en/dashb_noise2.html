@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <title>SmartSquare / Legend about noise</title>
+
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        footer {
+            color: white;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        article {
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="height:1060px;">
+
+    <header style="height:175px;">
+        <img src="../data/img/smsq_logo.png" style="float:left;height:150px;padding-left:10px;padding-top:10px;">
+        <img src="../data/img/bmbf_farbe_en.bmp" style="float:right;height:175px;">
+    </header>
+
+    <article style="position:relative;height:365px;width:1260px;left:300px;">
+        <br><br><br><br><br> <!-- 11 for 1 row; 5 for 2 rows; -->
+        <h1 style="font-family:Arial;">Hamburg noise map (&sect;47c BlmSchG)</h1>
+        <div class="a1"><p style="float:left;padding:10px;background-color:#FCD642;color:#FCD642;width:190px;">yellow</p></div>
+        <div class="b1"><p style="float:left;padding:10px;background-color:#DF7E16;color:#DF7E16;width:190px;">orange</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:#DB0000;color:#DB0000;width:190px;">rot</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:#800000;color:#800000;width:190px;">dunkelrot</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:#BC1AAA;color:#BC1AAA;width:190px;">pink</p></div>
+        <div class="c1"><p style="float:left;padding:10px;background-color:#2186A9;color:#2186A9;width:190px;">blau</p></div>
+
+        <br>
+        <div class="a2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50 - 55 dB (A)</p></div>
+        <div class="b2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55 - 60 dB (A)</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 - 65 dB (A)</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;65 - 70 dB (A)</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;70 - 75 dB (A)</p></div>
+        <div class="c2"><p style="float:left;font-family:Arial;font-size:24px;width:210px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75 - 80 dB (A)</p></div>
+    </article>
+
+    <footer>
+        <img src="../data/img/smsq.png" width="100%" style="bottom:0;clear:none">
+    </footer>
+
+</div>
+
+<script src="../../lib/autobahn.min.js"></script>
+<script src="../../lib/jquery/v3.2.1/jquery.min.js"></script>
+
+<script data-main="../dashb_wsocket2" src="../../lib/require.js"></script> <!-- TODO: two tables -->
+
+</body>
+</html>
