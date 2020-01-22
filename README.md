@@ -185,9 +185,7 @@ See this as v1.0
 
 ## Authors
 
-* **Thomas Mensing** - thomas.mensing@hcu-hamburg.de, Twitter: @thmensing
-
-See also the list of [contributors](https://www.hcu-hamburg.de/research/csl/team/leitung/) who participated in this project.
+[CityScienceLab](https://www.hcu-hamburg.de/research/csl/team/leitung/)
 
 ## License
 
